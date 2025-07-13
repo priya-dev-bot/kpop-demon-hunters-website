@@ -1,0 +1,751 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #16063a, #1a1a40);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.3); /* transparent black */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  z-index: 1000;
+}
+
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 0 20px;
+}
+
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #ff69b4;
+}
+
+/* Hero Section with Fullscreen Image */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('images/poster.jpg'); /* Make sure this path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; /* Fallback */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  padding-top: 100px;
+  z-index: 1;
+}
+
+/* Optional Overlay (comment out if you don't want it) */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+/* Text Animations */
+.title {
+  font-size: 50px;
+  margin-bottom: 30px;
+  z-index: 1;
+  animation: slideFadeIn 1s ease-out forwards;
+  opacity: 0;
+  background: linear-gradient(90deg, #ff66cc, #ffa500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Button Animation */
+.watch-btn {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ff004c, #ff7b00);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  animation: popFade 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.watch-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #ff004c;
+}
+
+/* Keyframes */
+@keyframes slideFadeIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popFade {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/*about section*/
+.about {
+  position: relative;
+  padding: 80px 20px;
+  background-image: url('images/about-bg.jpg'); /* update with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  z-index: 1;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.about-intro {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out both;
+}
+
+.about-intro h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff66cc;
+  text-shadow: 0 0 10px rgba(255, 102, 204, 0.4);
+}
+
+.about-intro p {
+  font-size: 18px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Grid Container */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Each Box */
+.about-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: floatIn 1s ease forwards;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.about-box:hover {
+  transform: scale(1.03);
+}
+
+.about-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.about-box h3 {
+  font-size: 24px;
+  color: #ffa500;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.about-box p {
+  font-size: 16px;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* Specific Animations */
+.left {
+  animation-delay: 0.2s;
+}
+.right {
+  animation-delay: 0.4s;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-box {
+    width: 90%;
+  }
+}
+.about-production {
+  position: relative;
+  max-width: 700px;
+  margin: 60px auto 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  animation: fadeInUp 1s ease-out both;
+  z-index: 1;
+  text-align: left;
+  color: #f0f0f0;
+}
+
+.about-production h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ff66cc;
+  text-shadow: 0 0 8px rgba(255, 102, 204, 0.3);
+  text-align: center;
+}
+
+.about-production ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-production li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-left: 4px solid #ffa500;
+  padding-left: 12px;
+}
+
+
+
+
+/* Characters Section with Background Image */
+.characters {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background-image: url('images/characters-bg.jpg'); /* Update path if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Overlay for better text readability */
+.characters::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.7); /* dark glass overlay */
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.characters h2 {
+  position: relative;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff66cc;
+  text-shadow: 0 0 10px rgba(255, 102, 204, 0.4);
+  z-index: 1;
+}
+
+.character-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.character-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.character-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px #ff66cc99;
+}
+
+.character-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover img {
+  transform: scale(1.05);
+}
+
+.character-card h3 {
+  font-size: 20px;
+  color: #ffa500;
+  margin-bottom: 10px;
+}
+
+.character-card p {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/*gallery section*/
+/* Gallery Section with Background Image */
+.gallery {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background-image: url('images/Gellary-bg.jpg'); /* 🔁 Change path if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.7); /* dark overlay */
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.gallery h2 {
+  position: relative;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff66cc;
+  text-shadow: 0 0 10px rgba(255, 102, 204, 0.4);
+  z-index: 1;
+}
+
+.gallery-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 45px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.gallery-grid img {
+  width: 8cm;
+  height: 8cm;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  animation: zoomIn 1s ease both;
+  margin: 0 auto;
+}
+
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff66cc99;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+/* Trailer Section */
+/* Trailer Section with Background Image */
+.trailer {
+  padding: 80px 20px;
+  background-image: url('images/trailer-bg.jpg'); /* 🔁 Replace with your actual file */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.trailer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.trailer h2 {
+  position: relative;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff66cc;
+  text-shadow: 0 0 12px rgba(255, 102, 204, 0.4);
+  z-index: 1;
+}
+
+.trailer-container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #ff66cc44;
+  animation: fadeInZoom 1s ease-in-out forwards;
+}
+
+.trailer-container iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  display: block;
+}
+
+/* Animation */
+@keyframes fadeInZoom {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+  .trailer-container iframe {
+    height: 250px;
+  }
+}
+
+
+/* Music Section with Background Image */
+.music {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background-image: url('images/musci-bg.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Dark overlay */
+.music::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* Section Title */
+.music h2 {
+  position: relative;
+  font-size: 36px;
+  color: #ff66cc;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(255, 102, 204, 0.5);
+  z-index: 1;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Grid Layout */
+.music-grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* 🎵 Music card fixed to 8cm square */
+.music-card {
+  width: 9cm;
+  height: 9cm;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: fadeInZoom 1s ease-in-out both;
+}
+
+.music-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff66cc99;
+}
+
+.music-card img {
+  width: 100%;
+  height: 6.2cm;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.music-card h3 {
+  font-size: 20px;
+  color: #ffa500;
+  margin: 6px 4px 0;
+  padding: 0 6px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Animations */
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/*footer section*/
+/* Footer */
+.footer {
+  background: linear-gradient(to right, #0d0225, #16063a);
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.footer h2 {
+  font-size: 28px;
+  color: #ff66cc;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #ff66cc88;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.footer-socials {
+  margin-bottom: 20px;
+}
+
+.footer-socials a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #ff66cc;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffa500;
+  transform: scale(1.2);
+}
+
+.footer-credits {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Footer Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
