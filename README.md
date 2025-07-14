@@ -8,9 +8,8 @@ A fully responsive and animated **fan-made website** for the upcoming animated m
 
 ## 🌐 Live Demo
 
-🔗 [Click to Visit Website](https://yourusername.github.io/kpop-demon-hunters-website/)  
-*(Replace with your GitHub Pages link)*
-
+🔗 Click to Visit Website
+https://priya-dev-bot.github.io/kpop-demon-hunters-website
 ---
 
 ## 📸 Sections Included
